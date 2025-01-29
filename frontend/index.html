@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF MCQ Generator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF MCQ Generator</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="pdfFile" accept=".pdf" style="display: none;">
+            <button class="button" onclick="document.getElementById('pdfFile').click()">
+                Choose PDF File
+            </button>
+            <div id="file-name"></div>
+        </div>
+
+        <div id="status-message"></div>
+
+        <button id="generate-mcq" class="button" disabled>
+            Generate MCQs
+        </button>
+
+        <!-- Add progress indicator -->
+        <div id="generation-progress" class="progress-section" style="display: none;">
+            <div class="progress-message">Generating MCQs...</div>
+            <div class="progress-spinner"></div>
+        </div>
+
+        <div id="mcq-container" class="mcq-container"></div>
+        
+        <!-- Add Generate Score button -->
+        <button id="generate-score" class="button score-button" style="display: none;">
+            Generate Score
+        </button>
+        
+        <!-- Add score display section -->
+        <div id="score-display" class="score-section" style="display: none;"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html> 
