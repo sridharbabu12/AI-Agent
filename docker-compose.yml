@@ -1,0 +1,24 @@
+# Specifies the Docker Compose file version
+version: '3'
+
+# Define the services/containers to be run
+services:
+  # Name of our service
+  web:
+    # Build the image using the Dockerfile in current directory
+    build: .
+    
+    # Port mapping - maps port 8000 on host to port 8000 in container
+    ports:
+      - "8000:8000"
+    
+    # Environment variables passed to the container
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}       # OpenAI API key for GPT
+      - UNSTRUCTURED_API_KEY=${UNSTRUCTURED_API_KEY}  # For PDF processing
+      - SUPABASE_URL=${SUPABASE_URL}           # Supabase database URL
+      - SUPABASE_KEY=${SUPABASE_KEY}           # Supabase API key
+    
+    # Volume mapping - persists uploaded PDFs between container restarts
+    volumes:
+      - ./uploaded_data:/app/uploaded_data      # Maps local folder to container      # Maps local folder to container   

@@ -131,12 +131,3 @@ def generate_mcqs(text_chunk: str) -> List[Dict]:
         print(f"Error generating MCQs: {str(e)}")
         return []
 
-# Add test code
-if __name__ == "__main__":
-    test_text = """
-    Artificial Intelligence (AI) is the simulation of human intelligence in machines. 
-    It enables machines to learn from experience, adjust to new inputs, and perform human-like tasks.
-    """
-    mcqs = generate_mcqs(test_text)
-    print("\nGenerated MCQs:")
-    print(json.dumps(mcqs, indent=2))
